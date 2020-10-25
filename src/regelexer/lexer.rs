@@ -1,31 +1,43 @@
-use std::fs::File;
-use std::io::prelude::*;
-use std::iter::Iterator;
-use std::path::Path;
+use super::lexer_cursor::LexerCursor;
+use super::lexer_enum::LexerEnum;
+use super::tokenizer::Tokenizer;
 
-use crate::regelexer::lexer_cursor::LexerCursor;
-use crate::regelexer::lexer_enum::LexerEnum;
-use crate::regelexer::tokenizer::Tokenizer;
-
-pub struct Lexer {
+pub struct Lexer<'a> {
     file_path: String,
     file_contents: String,
     tokenizer: Tokenizer,
-    cursor: LexerCursor,
+    cursor: LexerCursor<'a>,
     tokens: Vec<LexerToken>,
 }
 
+/// Contains lexer enum extracted from input and
+/// meta data like line number, col number etc
 pub struct LexerToken {
     lex_enum: LexerEnum,
 }
 
 impl Lexer {
     /// Create new Lexer
-    pub fn new() -> Self {}
+    pub fn new() -> Result<Self> {
+        unimplemented!();
+    }
 
     /// Open and read input file into memory
-    fn read_file(file_path: &String) -> String {}
+    fn read_file(file_path: &String) -> String {
+        unimplemented!();
+    }
 
-    /// Parse and tokenize input. Store tokes in a vector
-    pub fn lex_input() {}
+    /// Parse and tokenize input. Store tokens in a vector
+    fn lex_input() {
+        unimplemented!();
+    }
+}
+
+impl IntoIterator for Lexer {
+    type Item = LexerToken;
+    type IntoIter = std::vec::IntoIter<Self::Item>;
+
+    fn into_iter(self) -> Self::IntoIter {
+        unimplemented!();
+    }
 }

@@ -1,10 +1,12 @@
 use std::cell::Cell;
 
-struct LexerCursor {
-    data: &String,
+pub struct LexerCursor<'a> {
+    data: &'a String,
     index: Cell<usize>,
 }
 
-impl AsRef<&String> for LexerCursor {
-    fn as_ref(&self) -> &String {}
+impl AsRef<String> for LexerCursor {
+    fn as_ref(&self) -> &String {
+        unimplemented!();
+    }
 }
