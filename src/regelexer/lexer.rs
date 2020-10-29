@@ -1,10 +1,11 @@
 use super::lexer_cursor::LexerCursor;
 use super::lexer_enum::LexerEnum;
+use super::lexer_error::Error;
 use super::tokenizer::Tokenizer;
 
 pub struct Lexer<'a> {
     file_path: String,
-    file_contents: String,
+    file_contents: &'a String,
     tokenizer: Tokenizer,
     cursor: LexerCursor<'a>,
     tokens: Vec<LexerToken>,
@@ -16,9 +17,9 @@ pub struct LexerToken {
     lex_enum: LexerEnum,
 }
 
-impl Lexer {
+impl<'a> Lexer<'a> {
     /// Create new Lexer
-    pub fn new() -> Result<Self> {
+    pub fn new(filepath: &'a String) -> Result<Self, Error> {
         unimplemented!();
     }
 
@@ -33,7 +34,7 @@ impl Lexer {
     }
 }
 
-impl IntoIterator for Lexer {
+impl<'a> IntoIterator for Lexer<'a> {
     type Item = LexerToken;
     type IntoIter = std::vec::IntoIter<Self::Item>;
 

@@ -6,11 +6,9 @@ pub enum LexerEnum {
     Error,
 }
 
-impl LexerEnum {
-    /// List of regex patterns
-    ///
-    /// Macro return enum instance with string from regex pattern
-    ///
-    /// Return boolean whether current token is skip
-    unimplemented!();
-}
+/// List of regex patterns
+///
+/// Macro return enum instance with string from regex pattern
+///
+/// Return boolean whether current token is skip
+impl LexerEnum {}

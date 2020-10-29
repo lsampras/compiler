@@ -5,7 +5,7 @@ pub struct LexerCursor<'a> {
     index: Cell<usize>,
 }
 
-impl AsRef<String> for LexerCursor {
+impl<'a> AsRef<String> for LexerCursor<'a> {
     fn as_ref(&self) -> &String {
         unimplemented!();
     }

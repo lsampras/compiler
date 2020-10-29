@@ -1,7 +1,8 @@
 use snafu::{Backtrace, Snafu};
+use std::path::PathBuf;
 
 #[derive(Debug, Snafu)]
-enum Error {
+pub enum Error {
     // error when trying to open file
     OpenFile {
         filename: PathBuf,
