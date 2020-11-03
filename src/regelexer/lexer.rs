@@ -4,7 +4,6 @@ use super::lexer_error::Error;
 use super::tokenizer::Tokenizer;
 
 pub struct Lexer<'a> {
-    file_path: String,
     file_contents: &'a String,
     tokenizer: Tokenizer,
     cursor: LexerCursor<'a>,
@@ -19,7 +18,12 @@ pub struct LexerToken {
 
 impl<'a> Lexer<'a> {
     /// Create new Lexer
-    pub fn new(filepath: &'a String) -> Result<Self, Error> {
+    pub fn new_from_file(filepath: &'a String) -> Result<Self, Error> {
+        unimplemented!();
+    }
+
+    /// Create new Lexer using String
+    pub fn new(file_content: &'a String) -> Result<Self, Error> {
         unimplemented!();
     }
 
