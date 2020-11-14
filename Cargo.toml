@@ -9,3 +9,10 @@ edition = "2018"
 [dependencies]
 regex = "1"
 snafu = "0"
+regelexer_derive = { path = "regelexer_derive"}
+
+
+# TODO : add default export for regelexer-derive crate
+# [features]
+# default = ["export_derive"]
+# export_derive = ["logos-derive"]
